@@ -384,6 +384,7 @@ function otcalc() {
   document.getElementsByName("ptype")[0].value = onethree_power_type;
 }
 
+// Recommendation messages
 const recommendationMessages = {
   advancedNano: "Add Advanced Nano",
   changeFoil: "Change foil thickness"
@@ -392,6 +393,7 @@ const recommendationMessages = {
 const checkAreaRatio = (arRatio) => {
   const recommendation = document.getElementById('Recommendation');
   const message = document.getElementById('Recommendation_Message');
+  // set/show/hide recommendation message based on 0.66 and 0.5
   arRatio < 0.66 ? (
     recommendation.removeAttribute('hidden'),
     message.innerHTML = arRatio > 0.5 ? recommendationMessages.advancedNano : recommendationMessages.changeFoil
