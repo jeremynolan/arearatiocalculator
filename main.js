@@ -391,14 +391,15 @@ const recommendationMessages = {
 }
 
 const checkAreaRatio = (arRatio) => {
-  const recommendation = document.getElementById('Recommendation');
-  const message = document.getElementById('Recommendation_Message');
+  const recommendation = document.getElementById('Recommendation')
+  const message = document.getElementById('Recommendation_Message')
   // set/show/hide recommendation message based on 0.66 and 0.5
   arRatio < 0.66 ? (
-    recommendation.removeAttribute('hidden'),
+    recommendation.classList.remove('hidden'),
     message.innerHTML = arRatio > 0.5 ? recommendationMessages.advancedNano : recommendationMessages.changeFoil
   ) : (
-    recommendation.setAttribute('hidden', null)
+    recommendation.classList.add('hidden'),
+    message.innerHTML = ''
   )
 };
 
