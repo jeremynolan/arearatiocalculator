@@ -97,3 +97,14 @@ h4 {
   text-align: left;
 }
 
+.recommendation {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+

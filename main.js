@@ -384,21 +384,23 @@ function otcalc() {
   document.getElementsByName("ptype")[0].value = onethree_power_type;
 }
 
+// Recommendation messages
+const recommendationMessages = {
+  advancedNano: "Add Advanced Nano",
+  changeFoil: "Change foil thickness"
+}
+
 const checkAreaRatio = (arRatio) => {
-  if (document.getElementsByName("arRatio")[0].value < 0.5 || arRatio < 0.5) {
-    document.getElementById("Change_Foil").removeAttribute("hidden");
-    document.getElementById("Advanced_Nano").setAttribute("hidden", null);
-  } else if (
-    (document.getElementsByName("arRatio")[0].value >= 0.5 &&
-    document.getElementsByName("arRatio")[0].value <= 0.66) ||
-    (arRatio >= 0.5 && arRatio <= 0.66)
-  ) {
-    document.getElementById("Advanced_Nano").removeAttribute("hidden");
-    document.getElementById("Change_Foil").setAttribute("hidden", null);
-  } else {
-    document.getElementById("Advanced_Nano").setAttribute("hidden", null);
-    document.getElementById("Change_Foil").setAttribute("hidden", null);
-  }
+  const recommendation = document.getElementById('Recommendation')
+  const message = document.getElementById('Recommendation_Message')
+  // set/show/hide recommendation message based on 0.66 and 0.5
+  arRatio < 0.66 ? (
+    recommendation.classList.remove('hidden'),
+    message.innerHTML = arRatio >= 0.5 ? recommendationMessages.advancedNano : recommendationMessages.changeFoil
+  ) : (
+    recommendation.classList.add('hidden'),
+    message.innerHTML = ''
+  )
 };
 
 function round() {
