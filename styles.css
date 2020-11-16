@@ -1,0 +1,59 @@
+body{
+  font-family: 'Raleway', sans-serif;
+  background-color: #E0E5EC;
+}
+
+.calculator{
+  margin: 6vh 0 7vh 25vh;
+
+  border-radius: 50px;
+background: #E0E5EC;
+box-shadow:  20px 20px 60px #bec3c9,
+             -20px -20px 60px #ffffff;
+  width: 50vw;
+
+
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #6500fc;
+    border-color: #6500fc;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: none;
+}
+.btn-primary{
+  background-color: #6500fc;
+  border-color : #6500fc;
+}
+
+.btn-primary:hover{
+  background-color: #6500fc;
+  border-color : #6500fc;
+}
+
+.btn-primary:active{
+  background-color: #6500fc;
+  border-color : #6500fc;
+}
+
+.calculator .upper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  padding: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  text-align: center;
+  background: #E0E5EC;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid grey;
+}
