@@ -396,7 +396,7 @@ const checkAreaRatio = (arRatio) => {
   // set/show/hide recommendation message based on 0.66 and 0.5
   arRatio < 0.66 ? (
     recommendation.classList.remove('hidden'),
-    message.innerHTML = arRatio > 0.5 ? recommendationMessages.advancedNano : recommendationMessages.changeFoil
+    message.innerHTML = arRatio >= 0.5 ? recommendationMessages.advancedNano : recommendationMessages.changeFoil
   ) : (
     recommendation.classList.add('hidden'),
     message.innerHTML = ''
