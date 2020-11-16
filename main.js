@@ -397,16 +397,43 @@ const checkAreaRatio = (arRatio) => {
   arRatio < 0.66 ? (
     recommendation.classList.remove('hidden'),
     message.innerHTML = arRatio >= 0.5 ? recommendationMessages.advancedNano : recommendationMessages.changeFoil
-  ) : (
+    ) : (
     recommendation.classList.add('hidden'),
     message.innerHTML = ''
-  )
+    )
 };
+const selectShape = (shape) => {
+  switch (shape) {
+    case 'Round':
+      round();
+      break;
+
+    case 'Square':
+      square();
+      break;
+
+    case 'Rectangle':
+      rect();
+      break;
+
+    case '1/2 HB':
+      halfhb();
+      break;
+
+    case '1/3 HB':
+      othb();
+      break;
+
+    default:
+      round();
+      break;
+  }
+}
+
+selectShape();
 
 function round() {
   shape.innerHTML = `
-  <h4>Selected Shape :</h4>
-  <p>Round</p>
   <h4>Diameter :</h4>
   <input type="number" name="c_diameter" value="" placeholder="Diameter">
   <h4>Thickness :</h4>
@@ -417,8 +444,6 @@ function round() {
 
 function square() {
   shape.innerHTML = `
-  <h4>Selected Shape :</h4>
-  <p>Square</p>
   <h4>Specify Dimention :</h4>
   <input type="number" name="s_dimention" value="" placeholder="Dimention">
   <h4>Thickness :</h4>
@@ -429,11 +454,9 @@ function square() {
 
 function rect() {
   shape.innerHTML = `
-  <h4>Selected Shape :</h4>
-  <p>Rectangle</p>
-  <h4>Length</h4>
+  <h4>Length : </h4>
   <input type="number" name="r_length" value="" placeholder="Length">
-  <h4>width</h4>
+  <h4>Width : </h4>
   <input type="number" name="r_width" value="" placeholder="Width">
   <h4>Thickness :</h4>
   <input type="number" name="thickness" value="" placeholder="Thickness">
@@ -443,11 +466,9 @@ function rect() {
 
 function halfhb() {
   shape.innerHTML = `
-  <h4>Selected Shape :</h4>
-  <p>1/2 HB</p>
-  <h4>Length</h4>
+  <h4>Length : </h4>
   <input type="number" name="hf_length" value="" placeholder="Length">
-  <h4>width</h4>
+  <h4>Width : </h4>
   <input type="number" name="hf_width" value="" placeholder="Width">
   <h4>Thickness :</h4>
   <input type="number" name="thickness" value="" placeholder="Thickness">
@@ -457,11 +478,9 @@ function halfhb() {
 
 function othb() {
   shape.innerHTML = `
-  <h4>Selected Shape :</h4>
-  <p>1/3 HB</p>
-  <h4>Length</h4>
+  <h4>Length : </h4>
   <input type="number" name="ot_length" value="" placeholder="Length">
-  <h4>width</h4>
+  <h4>Width : </h4>
   <input type="number" name="ot_width" value="" placeholder="Width">
   <h4>Thickness :</h4>
   <input type="number" name="thickness" value="" placeholder="Thickness">
